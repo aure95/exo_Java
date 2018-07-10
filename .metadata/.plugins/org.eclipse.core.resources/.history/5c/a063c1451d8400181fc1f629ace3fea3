@@ -1,0 +1,10 @@
+package fr.banque;
+
+public class Compte {
+	
+	private int numero;
+	private double solde;
+	
+	//////////////////////////////
+
+}

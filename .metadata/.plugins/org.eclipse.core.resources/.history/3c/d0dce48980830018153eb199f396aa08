@@ -1,0 +1,18 @@
+package fr.exemple;
+
+public class Personne {
+	
+	// Attributs
+	// visibilité / typage / nom
+	
+	private String nom;
+	private String prenom;
+	private int age;
+	private double taille;
+	
+	
+	
+	
+	// Méthodes
+
+}

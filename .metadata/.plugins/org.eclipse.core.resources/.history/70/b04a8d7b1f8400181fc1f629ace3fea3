@@ -1,0 +1,9 @@
+package fr.banque;
+
+public class Client {
+	
+	Compte unCompte=new Compte();
+	
+	
+
+}

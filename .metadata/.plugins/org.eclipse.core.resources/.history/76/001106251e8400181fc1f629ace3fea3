@@ -1,0 +1,24 @@
+package fr.banque;
+
+public class Compte {
+	
+	private int numero;
+	private double solde;
+	
+	//////////////////////////////
+	
+	public Compte() {
+		
+		this(0,0.0D)
+
+	}
+	
+	public Compte(int numero, double solde) {
+
+		this.numero = numero;
+		this.solde = solde;
+	}
+	
+	
+
+}

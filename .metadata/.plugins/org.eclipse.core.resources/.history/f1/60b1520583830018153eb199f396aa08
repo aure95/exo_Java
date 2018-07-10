@@ -1,0 +1,31 @@
+package fr.exemple;
+
+public class Personne {
+	
+	// Attributs
+	// visibilité / typage / nom
+	
+	private String nom;
+	private String prenom;
+	private int age;
+	private double taille;
+		
+	// Méthodes
+	// visibilité / code retour / nom / parametres
+	
+	public void parler(String message) {
+		
+		System.out.println(message);
+	}
+	
+	public int marcher() {
+
+		return 1;
+		
+	}
+	
+	
+	
+	
+
+}
