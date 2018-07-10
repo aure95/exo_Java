@@ -3,24 +3,25 @@ package fr.banque;
 import java.util.Arrays;
 
 public class Client {
-	
+
 	private String nom;
 	private String prenom;
 	private int age;
 	private int numero;
 	private Compte[] compte=new Compte[5];
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	public Client() {
-		this("","",0,null,)
+
+
 	}
 
 	public Client(String nom, String prenom, int age, int numero, Compte[] compte) {
-
+		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
@@ -60,12 +61,48 @@ public class Client {
 		this.numero = numero;
 	}
 
-	public Compte[] getCompte() {
-		return compte;
+	public Compte getCompte(int numeroCompte) {
+
+		Compte res = null;
+		boolean OK=false;
+
+		for (Compte co : this.compte) {
+			if (co.getNumero() != 0) {
+				if (co.getNumero() == numeroCompte) {
+					res = co;
+					OK=true;
+
+				}
+			}
+		}
+		if (!OK)
+		{
+			System.out.println(
+					"le compte avec numero de compte " + numeroCompte + " ne peut etre trouvé ou n'éxiste pas ");
+		}
+
+		return res;
 	}
 
-	public void setCompte(Compte[] compte) {
-		this.compte = compte;
+	public void ajouterCompte(Compte Acompte) {
+
+		boolean vide=true;
+
+
+		for(int i =0;i<this.compte.length;i++)
+		{
+			if(this.compte[i]==null)
+			{
+				this.compte[i]=Acompte;
+				vide=false;
+				break;
+			}
+
+		}
+		if (vide) {
+			System.out.println("Le compte ne peut etre ajouté pas de place");
+		}
+
 	}
 
 	@Override

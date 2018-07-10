@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="600" key="clean_up_save_particpant_modify_dialog.preferred_x"/>
+	<item value="27" key="clean_up_save_particpant_modify_dialog.preferred_y"/>
+	<item value="887" key="clean_up_save_particpant_modify_dialog.preferred_width"/>
+	<item value="614" key="clean_up_save_particpant_modify_dialog.preferred_height"/>
+	<item value="4" key="clean_up_save_particpant_modify_dialog.last_focus"/>
+	<item value="10" key="org.eclipse.jdt.uiformatter_page.modify_dialog_tab_page.last_focus_index"/>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="false" key="OmitCallToSuper"/>
 	</section>
