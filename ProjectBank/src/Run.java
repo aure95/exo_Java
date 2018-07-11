@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 import fr.banque.Client;
 import fr.banque.Compte;
+import fr.banque.CompteRemunere;
 
 public class Run {
 
@@ -60,6 +61,14 @@ public class Run {
 		System.out.println(c1.getCompte(789));
 
 		System.out.println(Arrays.toString(c1.getCompte()));
+
+		CompteRemunere compte6 = new CompteRemunere();
+		compte6.setSolde(50.0D);
+		compte6.setTaux(0.25);
+		System.out.println(compte6.toString());
+		System.out.println(compte6.calculerInterets());
+		compte6.verserInterets();
+		System.out.println(compte6.toString());
 
 
 

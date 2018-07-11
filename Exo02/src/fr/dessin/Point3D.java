@@ -1,11 +1,11 @@
 package fr.dessin;
 
 public class Point3D extends Point2D {
-	
+
 	private int z;
-	
+
 	////////////////////////
-	
+
 	public Point3D() {
 		super();
 		this.z=0;
@@ -17,9 +17,9 @@ public class Point3D extends Point2D {
 		this.z=vZ;
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	///////////////////////
-	
+
 	public int getZ() {
 		return z;
 	}
@@ -29,19 +29,20 @@ public class Point3D extends Point2D {
 	}
 
 	//////////////////////////
-	
+
 	public void translater(int dX,int dY, int dZ){
 		super.translater(dX, dY);
 		this.z+=dZ;
-		
+
 	}
-	
+
+	@Override
 	public void afficher()
-	{
+	{ // TODO a revoir
 		System.out.println(super.getX()+" "+super.getY()+" "+this.z);
 	}
-	
-	
-	
+
+
+
 
 }
