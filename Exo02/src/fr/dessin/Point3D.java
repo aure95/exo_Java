@@ -9,13 +9,13 @@ public class Point3D extends Point2D {
 	public Point3D() {
 		super();
 		this.z=0;
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Point3D(int vX, int vY,int vZ) {
 		super(vX, vY);
 		this.z=vZ;
-		// TODO Auto-generated constructor stub
+
 	}
 
 	///////////////////////
@@ -38,7 +38,7 @@ public class Point3D extends Point2D {
 
 	@Override
 	public void afficher()
-	{ // TODO a revoir
+	{
 		System.out.println(super.getX()+" "+super.getY()+" "+this.z);
 	}
 

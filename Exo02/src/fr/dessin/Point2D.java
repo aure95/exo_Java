@@ -58,6 +58,26 @@ public class Point2D {
 
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+
+		Point2D p=(Point2D)obj;
+
+		if(obj==null) {
+			return false;
+		}
+		if(obj==this) {
+			return true;
+		}
+		if(this.getClass().equals(obj.getClass()))
+		{
+			if(this.getX()==p.getX() && this.getY()==p.getY()) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 
 }

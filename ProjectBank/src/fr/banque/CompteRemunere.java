@@ -9,7 +9,7 @@ public class CompteRemunere extends Compte {
 
 	public CompteRemunere() {
 		this(0, 0.0D, 0.0D);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public CompteRemunere(int numero, double solde, double taux) {

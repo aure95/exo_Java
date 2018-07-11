@@ -2,7 +2,9 @@ import java.util.Arrays;
 
 import fr.banque.Client;
 import fr.banque.Compte;
+import fr.banque.CompteASeuil;
 import fr.banque.CompteRemunere;
+
 
 public class Run {
 
@@ -63,6 +65,10 @@ public class Run {
 		System.out.println(Arrays.toString(c1.getCompte()));
 
 		CompteRemunere compte6 = new CompteRemunere();
+
+		System.out.println("\n" + "/////////////" + compte6.getClass() + "/////////////" + "\n");
+
+
 		compte6.setSolde(50.0D);
 		compte6.setTaux(0.25);
 		System.out.println(compte6.toString());
@@ -70,10 +76,23 @@ public class Run {
 		compte6.verserInterets();
 		System.out.println(compte6.toString());
 
+		CompteASeuil compte7 = new CompteASeuil();
+
+		System.out.println("\n" + "/////////////" + compte7.getClass() + "/////////////" + "\n");
+
+		System.out.println(compte7.toString());
+		compte7.ajouter(20.0D);
+		System.out.println(compte7.toString());
+		compte7.setSeuil(15.0D);
+		System.out.println(compte7.toString());
+		compte7.retirer(2.0D);
+		System.out.println(compte7.toString());
+		compte7.retirer(10.0D);
+		System.out.println(compte7.toString());
 
 
 
-
+		// TODO finir exo 7 Compte a seuil + TEST
 
 
 	}
