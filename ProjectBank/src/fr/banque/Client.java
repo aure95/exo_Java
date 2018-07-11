@@ -61,6 +61,11 @@ public class Client {
 		this.numero = numero;
 	}
 
+	public Compte[] getCompte()
+	{
+		return this.compte;
+	}
+
 	public Compte getCompte(int numeroCompte) {
 
 		Compte res = null;

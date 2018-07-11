@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import fr.banque.Client;
 import fr.banque.Compte;
 
@@ -32,8 +34,34 @@ public class Run {
 		System.out.println(c1.toString());
 		c1.setPrenom("toto");
 		System.out.println(c1.toString());
-		c1.ajouterCompte(new Compte());
+		c1.ajouterCompte(compte1);
 		System.out.println(c1.toString());
+
+		Compte compte2 = new Compte(456, 45D);
+		Compte compte3 = new Compte(544578, 65.3D);
+		Compte compte4 = new Compte(4584584, 102.8D);
+		Compte compte5 = new Compte(455, 458.7D);
+
+		c1.ajouterCompte(compte1);
+		System.out.println(c1.toString());
+		c1.ajouterCompte(compte2);
+		System.out.println(c1.toString());
+		c1.ajouterCompte(compte3);
+		System.out.println(c1.toString());
+		c1.ajouterCompte(compte4);
+		System.out.println(c1.toString());
+		c1.ajouterCompte(compte5);
+		System.out.println(c1.toString());
+		c1.ajouterCompte(compte2);
+		System.out.println(c1.toString());
+
+		System.out.println(c1.getCompte(123).toString());
+		System.out.println(c1.getCompte(456).toString());
+		System.out.println(c1.getCompte(789));
+
+		System.out.println(Arrays.toString(c1.getCompte()));
+
+
 
 
 
