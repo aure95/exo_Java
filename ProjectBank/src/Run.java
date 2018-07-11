@@ -89,6 +89,34 @@ public class Run {
 		System.out.println(compte7.toString());
 		compte7.retirer(10.0D);
 		System.out.println(compte7.toString());
+		compte7.retirer(2.0D);
+		System.out.println(compte7.toString());
+
+		Client client2 = new Client();
+		System.out.println(client2.toString());
+		client2.setNom("toto");
+		client2.setPrenom("dupont");
+		client2.setNumero(452);
+
+		Compte compte8[] = null;
+		compte8 = new Compte[5];
+
+		compte8[0] = new Compte(123, 48.0D);
+		compte8[1] = new Compte(456, 78.4D);
+		compte8[2] = new CompteRemunere(789, 12.8D, 0.7);
+		compte8[3] = new Compte(753, 5164.7D);
+		compte8[4] = new CompteRemunere(159, 15479.78D, 0.25);
+
+		for (Compte c : compte8) {
+			client2.ajouterCompte(c);
+		}
+
+		System.out.println(client2.toString());
+
+		client2.verserInterets();
+
+		System.out.println(client2.toString());
+
 
 
 

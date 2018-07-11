@@ -71,9 +71,7 @@ public class Point2D {
 		}
 		if(this.getClass().equals(obj.getClass()))
 		{
-			if(this.getX()==p.getX() && this.getY()==p.getY()) {
-				return true;
-			}
+			if(this.getX()==p.getX() && this.getY()==p.getY())h
 		}
 
 		return false;

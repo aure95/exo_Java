@@ -110,6 +110,21 @@ public class Client {
 
 	}
 
+	public void verserInterets() {
+
+		int cpt = 0;
+
+		for (Compte co : this.compte)
+		{
+			// System.out.println(co.getClass().toString());
+			if (co.getClass().toString().equals("class fr.banque.CompteRemunere")) {
+				// System.out.println("class cLient ");
+				((CompteRemunere) this.compte[cpt]).verserInterets();
+			}
+			cpt++;
+		}
+	}
+
 	@Override
 	public String toString() {
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", numero=" + numero + ", compte="
