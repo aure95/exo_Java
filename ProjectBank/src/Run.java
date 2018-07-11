@@ -120,7 +120,7 @@ public class Run {
 
 
 
-		// TODO finir exo 7 Compte a seuil + TEST
+
 
 
 	}
