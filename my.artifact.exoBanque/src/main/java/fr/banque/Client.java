@@ -8,7 +8,7 @@ public class Client {
 	private String prenom;
 	private int age;
 	private int numero;
-	private Compte[] compte=new Compte[5];
+	private Compte[] compte = new Compte[5];
 
 
 
@@ -18,8 +18,9 @@ public class Client {
 	public Client() {
 
 
-
 	}
+
+
 
 	public Client(String nom, String prenom, int age, int numero, Compte[] compte) {
 		super();
@@ -117,10 +118,19 @@ public class Client {
 
 		for (Compte co : this.compte)
 		{
-			// System.out.println(co.getClass().toString());
+			if(co == null)
+			{
+				break;
+			}
+			System.out.println(co.getClass().toString());
 			if (co.getClass().toString().equals("class fr.banque.CompteRemunere")) {
 				// System.out.println("class cLient ");
 				((CompteRemunere) this.compte[cpt]).verserInterets();
+			}
+			if(co instanceof ICompteRemunere) {
+				// System.out.println("co instanceof ICompteRemunere debut");
+				((ICompteRemunere) this.compte[cpt]).verserInterets();
+				// System.out.println("co instanceof ICompteRemunere fin");
 			}
 			cpt++;
 

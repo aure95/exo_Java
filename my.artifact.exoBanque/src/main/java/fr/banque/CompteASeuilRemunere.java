@@ -3,6 +3,7 @@ package fr.banque;
 public class CompteASeuilRemunere extends CompteRemunere implements ICompteASeuil {
 
 
+	private double seuil;
 
 	///////////////////////////////////////////////////
 
@@ -37,14 +38,24 @@ public class CompteASeuilRemunere extends CompteRemunere implements ICompteASeui
 
 	@Override
 	public double getSeuil() {
-		// TODO Auto-generated method stub
-		return 0;
+
+		return this.seuil;
+
 	}
 
 	@Override
 	public void setSeuil(double unSeuil) {
-		// TODO Auto-generated method stub
 
+		this.seuil = unSeuil;
+
+	}
+
+	@Override
+	public String toString() {
+
+		String res = super.toString().substring(0, super.toString().length() - 1) + ", seuil= " + this.getSeuil() + "]";
+
+		return res;
 	}
 
 }

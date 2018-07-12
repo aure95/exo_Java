@@ -3,7 +3,10 @@ import java.util.Arrays;
 import fr.banque.Client;
 import fr.banque.Compte;
 import fr.banque.CompteASeuil;
+import fr.banque.CompteASeuilRemunere;
 import fr.banque.CompteRemunere;
+import fr.banque.ICompteASeuil;
+import fr.banque.ICompteRemunere;
 
 
 public class Run {
@@ -116,6 +119,51 @@ public class Run {
 		client2.verserInterets();
 
 		System.out.println(client2.toString());
+
+
+		System.out.println("\n////////////////essai class CompteASeuilRemunere////////////\n");
+
+		CompteASeuilRemunere compte9 = new CompteASeuilRemunere();
+
+
+		System.out.println("compte9 instanceof ICompteASeuil "+String.valueOf(compte9 instanceof ICompteASeuil));
+		System.out.println("compte9 instanceof ICompteRemunere "+String.valueOf(compte9 instanceof ICompteRemunere));
+		System.out.println(
+				"compte9 instanceof CompteASeuilRemunere " + String.valueOf(compte9 instanceof CompteASeuilRemunere));
+
+		System.out.println(compte9.toString());
+		compte9.setSolde(90.0D);
+		compte9.setSeuil(50.0D);
+		compte9.setTaux(0.1D);
+		System.out.println(compte9.toString());
+		compte9.retirer(10.0D);
+		System.out.println(compte9.toString());
+		compte9.retirer(40.0D);
+		System.out.println(compte9.toString());
+
+
+
+		Client client3 = new Client();
+		client3.setNom("titi");
+		client3.setPrenom("roland");
+		client3.setNumero(48);
+
+		System.out.println(client3.toString());
+		client3.ajouterCompte(new Compte());
+		System.out.println(client3.toString());
+
+		client3.ajouterCompte(compte9);
+		client3.ajouterCompte(new Compte());
+		client3.ajouterCompte(new CompteRemunere());
+
+
+		System.out.println(client3.toString());
+		client3.verserInterets();
+		System.out.println(client3.toString());
+
+
+
+
 
 
 
