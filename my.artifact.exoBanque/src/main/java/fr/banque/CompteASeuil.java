@@ -1,6 +1,6 @@
 package fr.banque;
 
-public class CompteASeuil extends Compte {
+public class CompteASeuil extends Compte implements ICompteASeuil {
 
 	private double seuil;
 
@@ -17,10 +17,12 @@ public class CompteASeuil extends Compte {
 
 	/////////////////////////////////////
 
+	@Override
 	public double getSeuil() {
 		return seuil;
 	}
 
+	@Override
 	public void setSeuil(double seuil) {
 		this.seuil = seuil;
 	}
@@ -38,8 +40,8 @@ public class CompteASeuil extends Compte {
 		{
 			System.out.println(
 					"IMPOSSIBLE le montant " + unMontant + " car le seuil supérieur " + this.getSeuil()
-							+ " au solde actuel de  "
-							+ this.getSolde());
+					+ " au solde actuel de  "
+					+ this.getSolde());
 		}
 
 	}
