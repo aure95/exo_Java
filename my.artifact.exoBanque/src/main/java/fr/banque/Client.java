@@ -1,24 +1,26 @@
 package fr.banque;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Hashtable;
+import java.util.Map;
 
 
 public class Client {
+
 
 	private String nom;
 	private String prenom;
 	private int age;
 	private int numero;
-	private List<Compte> compte = new ArrayList<>(5);
+	// private List<Compte> compte = new ArrayList<>(5);
+	private Map<Integer, Compte> compte = new Hashtable<>();
 
 	public Client() {
 
 
 	}
 
-
+	// TODO finir exo10 partie 2 Map
 
 	public Client(String nom, String prenom, int age, int numero, Compte[] compte) {
 		super();
@@ -26,14 +28,24 @@ public class Client {
 		this.prenom = prenom;
 		this.age = age;
 		this.numero = numero;
-		this.remplirList(compte);
+		// this.remplirList(compte);
+		this.remplirMap(compte);
 
 	}
 
-	private void remplirList(Compte[] compte) {
+	/*
+	 * private void remplirList(Compte[] compte) {
+	 *
+	 * for (Compte a : compte) { this.compte.add(a); }
+	 *
+	 * }
+	 */
+
+	private void remplirMap(Compte[] compte) {
 
 		for (Compte a : compte) {
-			this.compte.add(a);
+
+			this.compte.put(a.getNumero(), a);
 		}
 
 	}
@@ -74,7 +86,8 @@ public class Client {
 	{
 
 		Compte[] res = new Compte[this.compte.size()];
-		this.compte.toArray(res);
+		//this.compte.toArray(res);
+		/:this.compte.
 
 		return res;
 	}

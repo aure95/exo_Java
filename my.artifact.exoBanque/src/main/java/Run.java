@@ -28,12 +28,11 @@ public class Run {
 		try {
 			compte1.retirer(45.3D);
 		} catch (BanqueException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
 		System.out.println(compte1.toString());
-
 
 		System.out.println("\n" + "//////////////////////////" + "\n");
 
@@ -51,7 +50,7 @@ public class Run {
 		try {
 			c1.ajouterCompte(compte1);
 		} catch (BanqueException e7) {
-			// TODO Auto-generated catch block
+
 			e7.printStackTrace();
 		}
 		System.out.println(c1.toString());
@@ -64,42 +63,42 @@ public class Run {
 		try {
 			c1.ajouterCompte(compte1);
 		} catch (BanqueException e6) {
-			// TODO Auto-generated catch block
+
 			e6.printStackTrace();
 		}
 		System.out.println(c1.toString());
 		try {
 			c1.ajouterCompte(compte2);
 		} catch (BanqueException e5) {
-			// TODO Auto-generated catch block
+
 			e5.printStackTrace();
 		}
 		System.out.println(c1.toString());
 		try {
 			c1.ajouterCompte(compte3);
 		} catch (BanqueException e4) {
-			// TODO Auto-generated catch block
+			//
 			e4.printStackTrace();
 		}
 		System.out.println(c1.toString());
 		try {
 			c1.ajouterCompte(compte4);
 		} catch (BanqueException e3) {
-			// TODO Auto-generated catch block
+			//
 			e3.printStackTrace();
 		}
 		System.out.println(c1.toString());
 		try {
 			c1.ajouterCompte(compte5);
 		} catch (BanqueException e2) {
-			// TODO Auto-generated catch block
+			//
 			e2.printStackTrace();
 		}
 		System.out.println(c1.toString());
 		try {
 			c1.ajouterCompte(compte2);
 		} catch (BanqueException e1) {
-			// TODO Auto-generated catch block
+			//
 			e1.printStackTrace();
 		}
 		System.out.println(c1.toString());
@@ -132,8 +131,7 @@ public class Run {
 
 
 		try { compte7.retirer(2.0D); }
-		catch (BanqueException e) { // TODO
-			//Auto-generated catch block
+		catch (BanqueException e) {
 			e.printStackTrace();
 		}
 
@@ -144,14 +142,14 @@ public class Run {
 			compte7.retirer(10.0D);
 		} catch
 		(BanqueException e1) {
-			// TODO Auto-generated catch block
+			//
 			e1.printStackTrace();
 		}
 		System.out.println(compte7.toString());
 		try {
 			compte7.retirer(2.0D);
 		}
-		catch (BanqueException e1) { // TODO Auto-generated catch block
+		catch (BanqueException e1) { //
 			e1.printStackTrace(); }
 
 		System.out.println(compte7.toString());
@@ -171,7 +169,7 @@ public class Run {
 			try {
 				client2.ajouterCompte(c);
 			} catch (BanqueException e1) {
-				// TODO Auto-generated catch block
+				//
 				e1.printStackTrace();
 			}
 		}
@@ -202,13 +200,13 @@ public class Run {
 		System.out.println(compte9.toString());
 		try {
 			compte9.retirer(10.0D);
-		} catch (BanqueException e1) { // TODO Auto-generated catch block
+		} catch (BanqueException e1) { //
 			e1.printStackTrace();
 		}
 		System.out.println(compte9.toString());
 		try {
 			compte9.retirer(40.0D);
-		} catch (BanqueException e1) { // TODO Auto-generated catch block
+		} catch (BanqueException e1) { //
 			e1.printStackTrace();
 		}
 		System.out.println(compte9.toString());
@@ -220,23 +218,24 @@ public class Run {
 		client3.setPrenom("roland"); client3.setNumero(48);
 
 		System.out.println(client3.toString()); try { client3.ajouterCompte(new
-				Compte()); } catch (BanqueException e1) { // TODO Auto-generated catch block
-					e1.printStackTrace(); } System.out.println(client3.toString());
+				Compte());
+		} catch (BanqueException e1) { //
+			e1.printStackTrace(); } System.out.println(client3.toString());
 
-					try {
-						client3.ajouterCompte(compte9);
-					} catch (BanqueException e1) { // TODO
-					} try {
-						client3.ajouterCompte(new Compte());
-					} catch (BanqueException e1) { // TODO
-					} try {
-						client3.ajouterCompte(new CompteRemunere());
-					} catch (BanqueException e1) { //
-					}
+			try {
+				client3.ajouterCompte(compte9);
+			} catch (BanqueException e1) {
+			} try {
+				client3.ajouterCompte(new Compte());
+			} catch (BanqueException e1) {
+			} try {
+				client3.ajouterCompte(new CompteRemunere());
+			} catch (BanqueException e1) {
+			}
 
 
-					System.out.println(client3.toString()); client3.verserInterets();
-					System.out.println(client3.toString());
+			System.out.println(client3.toString()); client3.verserInterets();
+			System.out.println(client3.toString());
 
 
 
