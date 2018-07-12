@@ -1,6 +1,9 @@
 package fr.banque;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 
 public class Client {
 
@@ -8,12 +11,7 @@ public class Client {
 	private String prenom;
 	private int age;
 	private int numero;
-	private Compte[] compte = new Compte[5];
-
-
-
-
-
+	private List<Compte> compte = new ArrayList<>(5);
 
 	public Client() {
 
@@ -28,7 +26,16 @@ public class Client {
 		this.prenom = prenom;
 		this.age = age;
 		this.numero = numero;
-		this.compte = compte;
+		this.remplirList(compte);
+
+	}
+
+	private void remplirList(Compte[] compte) {
+
+		for (Compte a : compte) {
+			this.compte.add(a);
+		}
+
 	}
 
 	public String getNom() {
@@ -65,50 +72,64 @@ public class Client {
 
 	public Compte[] getCompte()
 	{
-		return this.compte;
+
+		Compte[] res = new Compte[this.compte.size()];
+		this.compte.toArray(res);
+
+		return res;
 	}
 
 	public Compte getCompte(int numeroCompte) {
 
 		Compte res = null;
 		boolean OK=false;
+		Compte[] compteCopie = new Compte[this.compte.size()];
+		this.compte.toArray(compteCopie);
 
-		for (Compte co : this.compte) {
+
+		for (Compte co : compteCopie) {
+			System.out.println(co.toString());
+
 			if (co.getNumero() != 0) {
 				if (co.getNumero() == numeroCompte) {
 					res = co;
-					OK=true;
+					OK = true;
 
 				}
 			}
+
 		}
-		if (!OK)
-		{
+
+		if (!OK) {
 			System.out.println(
 					"le compte avec numero de compte " + numeroCompte + " ne peut etre trouvé ou n'éxiste pas ");
 		}
 
 		return res;
+		// return new Compte();
 	}
 
-	public void ajouterCompte(Compte Acompte) {
 
-		boolean vide=true;
+	public void ajouterCompte(Compte Acompte) throws BanqueException {
 
-
-		for(int i =0;i<this.compte.length;i++)
+		if (this.compte.size() < 5) {
+			this.compte.add(Acompte);
+		}
+		else
 		{
-			if(this.compte[i]==null)
-			{
-				this.compte[i]=Acompte;
-				vide=false;
-				break;
-			}
+			throw new BanqueException("Le compte ne peut etre ajouté pas de place");
+		}
 
-		}
-		if (vide) {
-			System.out.println("Le compte ne peut etre ajouté pas de place");
-		}
+		/*
+		 * boolean vide=true;
+		 *
+		 *
+		 * for (int i = 0; i < this.compte.size(); i++) { if (this.compte.get(i) ==
+		 * null) { this.compte.add(Acompte); vide=false; break; }
+		 *
+		 * } if (vide) { throw new
+		 * BanqueException("Le compte ne peut etre ajouté pas de place"); }
+		 */
 
 	}
 
@@ -122,14 +143,19 @@ public class Client {
 			{
 				break;
 			}
-			System.out.println(co.getClass().toString());
+			// System.out.println(co.getClass().toString());
 			if (co.getClass().toString().equals("class fr.banque.CompteRemunere")) {
 				// System.out.println("class cLient ");
-				((CompteRemunere) this.compte[cpt]).verserInterets();
+				((CompteRemunere) co).verserInterets();
+				this.compte.set(cpt, co);
+
+
+
 			}
 			if(co instanceof ICompteRemunere) {
 				// System.out.println("co instanceof ICompteRemunere debut");
-				((ICompteRemunere) this.compte[cpt]).verserInterets();
+				((ICompteRemunere) co).verserInterets();
+				this.compte.set(cpt, co);
 				// System.out.println("co instanceof ICompteRemunere fin");
 			}
 			cpt++;
@@ -140,6 +166,6 @@ public class Client {
 	@Override
 	public String toString() {
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", numero=" + numero + ", compte="
-				+ Arrays.toString(compte) + "]";
+				+ Arrays.toString(this.compte.toArray()) + "]";
 	}
 }

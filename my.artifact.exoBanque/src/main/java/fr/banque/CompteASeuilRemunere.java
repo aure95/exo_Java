@@ -26,12 +26,13 @@ public class CompteASeuilRemunere extends CompteRemunere implements ICompteASeui
 	//////////////////////////////////////////////////
 
 	@Override
-	public void retirer(double unMontant) {
+	public void retirer(double unMontant) throws BanqueException {
 
 		if (this.getSolde() - unMontant > this.seuil) {
 			super.retirer(unMontant);
 		} else {
-			System.out.println("IMPOSSIBLE le montant " + unMontant + " car le seuil supérieur " + this.getSeuil()
+			throw new BanqueException("IMPOSSIBLE le montant " + unMontant + " car le seuil supérieur "
+					+ this.getSeuil()
 			+ " au solde actuel de  " + this.getSolde());
 		}
 	}

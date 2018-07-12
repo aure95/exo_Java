@@ -30,7 +30,7 @@ public class CompteASeuil extends Compte implements ICompteASeuil {
 	///////////////////////////////////
 
 	@Override
-	public void retirer(double unMontant) {
+	public void retirer(double unMontant) throws BanqueException {
 
 		if(this.getSolde()-unMontant>this.seuil)
 		{
@@ -38,7 +38,7 @@ public class CompteASeuil extends Compte implements ICompteASeuil {
 		}
 		else
 		{
-			System.out.println(
+			throw new BanqueException(
 					"IMPOSSIBLE le montant " + unMontant + " car le seuil supérieur " + this.getSeuil()
 					+ " au solde actuel de  "
 					+ this.getSolde());

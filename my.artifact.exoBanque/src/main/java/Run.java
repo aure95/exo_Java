@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+import fr.banque.BanqueException;
 import fr.banque.Client;
 import fr.banque.Compte;
 import fr.banque.CompteASeuil;
@@ -23,7 +24,14 @@ public class Run {
 		System.out.println(compte1.toString());
 		compte1.ajouter(65D);
 		System.out.println(compte1.toString());
-		compte1.retirer(45.3D);
+
+		try {
+			compte1.retirer(45.3D);
+		} catch (BanqueException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		System.out.println(compte1.toString());
 
 
@@ -40,7 +48,12 @@ public class Run {
 		System.out.println(c1.toString());
 		c1.setPrenom("toto");
 		System.out.println(c1.toString());
-		c1.ajouterCompte(compte1);
+		try {
+			c1.ajouterCompte(compte1);
+		} catch (BanqueException e7) {
+			// TODO Auto-generated catch block
+			e7.printStackTrace();
+		}
 		System.out.println(c1.toString());
 
 		Compte compte2 = new Compte(456, 45D);
@@ -48,17 +61,47 @@ public class Run {
 		Compte compte4 = new Compte(4584584, 102.8D);
 		Compte compte5 = new Compte(455, 458.7D);
 
-		c1.ajouterCompte(compte1);
+		try {
+			c1.ajouterCompte(compte1);
+		} catch (BanqueException e6) {
+			// TODO Auto-generated catch block
+			e6.printStackTrace();
+		}
 		System.out.println(c1.toString());
-		c1.ajouterCompte(compte2);
+		try {
+			c1.ajouterCompte(compte2);
+		} catch (BanqueException e5) {
+			// TODO Auto-generated catch block
+			e5.printStackTrace();
+		}
 		System.out.println(c1.toString());
-		c1.ajouterCompte(compte3);
+		try {
+			c1.ajouterCompte(compte3);
+		} catch (BanqueException e4) {
+			// TODO Auto-generated catch block
+			e4.printStackTrace();
+		}
 		System.out.println(c1.toString());
-		c1.ajouterCompte(compte4);
+		try {
+			c1.ajouterCompte(compte4);
+		} catch (BanqueException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
 		System.out.println(c1.toString());
-		c1.ajouterCompte(compte5);
+		try {
+			c1.ajouterCompte(compte5);
+		} catch (BanqueException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		System.out.println(c1.toString());
-		c1.ajouterCompte(compte2);
+		try {
+			c1.ajouterCompte(compte2);
+		} catch (BanqueException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		System.out.println(c1.toString());
 
 		System.out.println(c1.getCompte(123).toString());
@@ -69,40 +112,54 @@ public class Run {
 
 		CompteRemunere compte6 = new CompteRemunere();
 
-		System.out.println("\n" + "/////////////" + compte6.getClass() + "/////////////" + "\n");
+		System.out.println("\n" + "/////////////" + compte6.getClass() +
+				"/////////////" + "\n");
 
 
-		compte6.setSolde(50.0D);
-		compte6.setTaux(0.25);
+		compte6.setSolde(50.0D); compte6.setTaux(0.25);
 		System.out.println(compte6.toString());
-		System.out.println(compte6.calculerInterets());
-		compte6.verserInterets();
+		System.out.println(compte6.calculerInterets()); compte6.verserInterets();
 		System.out.println(compte6.toString());
 
 		CompteASeuil compte7 = new CompteASeuil();
 
-		System.out.println("\n" + "/////////////" + compte7.getClass() + "/////////////" + "\n");
+		System.out.println("\n" + "/////////////" + compte7.getClass() +
+				"/////////////" + "\n");
 
-		System.out.println(compte7.toString());
-		compte7.ajouter(20.0D);
-		System.out.println(compte7.toString());
-		compte7.setSeuil(15.0D);
-		System.out.println(compte7.toString());
-		compte7.retirer(2.0D);
-		System.out.println(compte7.toString());
-		compte7.retirer(10.0D);
-		System.out.println(compte7.toString());
-		compte7.retirer(2.0D);
+		System.out.println(compte7.toString()); compte7.ajouter(20.0D);
+		System.out.println(compte7.toString()); compte7.setSeuil(15.0D);
 		System.out.println(compte7.toString());
 
-		Client client2 = new Client();
-		System.out.println(client2.toString());
-		client2.setNom("toto");
-		client2.setPrenom("dupont");
-		client2.setNumero(452);
 
-		Compte compte8[] = null;
-		compte8 = new Compte[5];
+		try { compte7.retirer(2.0D); }
+		catch (BanqueException e) { // TODO
+			//Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+
+		System.out.println(compte7.toString());
+		try {
+			compte7.retirer(10.0D);
+		} catch
+		(BanqueException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		System.out.println(compte7.toString());
+		try {
+			compte7.retirer(2.0D);
+		}
+		catch (BanqueException e1) { // TODO Auto-generated catch block
+			e1.printStackTrace(); }
+
+		System.out.println(compte7.toString());
+
+		Client client2 = new Client(); System.out.println(client2.toString());
+		client2.setNom("toto"); client2.setPrenom("dupont"); client2.setNumero(452);
+
+		Compte compte8[] = null; compte8 = new Compte[5];
 
 		compte8[0] = new Compte(123, 48.0D);
 		compte8[1] = new Compte(456, 78.4D);
@@ -111,7 +168,12 @@ public class Run {
 		compte8[4] = new CompteRemunere(159, 15479.78D, 0.25);
 
 		for (Compte c : compte8) {
-			client2.ajouterCompte(c);
+			try {
+				client2.ajouterCompte(c);
+			} catch (BanqueException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 
 		System.out.println(client2.toString());
@@ -126,46 +188,55 @@ public class Run {
 		CompteASeuilRemunere compte9 = new CompteASeuilRemunere();
 
 
-		System.out.println("compte9 instanceof ICompteASeuil "+String.valueOf(compte9 instanceof ICompteASeuil));
-		System.out.println("compte9 instanceof ICompteRemunere "+String.valueOf(compte9 instanceof ICompteRemunere));
-		System.out.println(
-				"compte9 instanceof CompteASeuilRemunere " + String.valueOf(compte9 instanceof CompteASeuilRemunere));
+		System.out.println("compte9 instanceof ICompteASeuil " + String.valueOf(compte9
+				instanceof ICompteASeuil));
+		System.out.println("compte9 instanceof ICompteRemunere " + String.valueOf(
+				compte9 instanceof ICompteRemunere));
+		System.out.println("compte9 instanceof CompteASeuilRemunere " + String.valueOf(compte9
+				instanceof CompteASeuilRemunere));
 
 		System.out.println(compte9.toString());
 		compte9.setSolde(90.0D);
 		compte9.setSeuil(50.0D);
 		compte9.setTaux(0.1D);
 		System.out.println(compte9.toString());
-		compte9.retirer(10.0D);
+		try {
+			compte9.retirer(10.0D);
+		} catch (BanqueException e1) { // TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		System.out.println(compte9.toString());
-		compte9.retirer(40.0D);
+		try {
+			compte9.retirer(40.0D);
+		} catch (BanqueException e1) { // TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		System.out.println(compte9.toString());
 
 
 
 		Client client3 = new Client();
 		client3.setNom("titi");
-		client3.setPrenom("roland");
-		client3.setNumero(48);
+		client3.setPrenom("roland"); client3.setNumero(48);
 
-		System.out.println(client3.toString());
-		client3.ajouterCompte(new Compte());
-		System.out.println(client3.toString());
+		System.out.println(client3.toString()); try { client3.ajouterCompte(new
+				Compte()); } catch (BanqueException e1) { // TODO Auto-generated catch block
+					e1.printStackTrace(); } System.out.println(client3.toString());
 
-		client3.ajouterCompte(compte9);
-		client3.ajouterCompte(new Compte());
-		client3.ajouterCompte(new CompteRemunere());
-
-
-		System.out.println(client3.toString());
-		client3.verserInterets();
-		System.out.println(client3.toString());
-
-
-
+					try {
+						client3.ajouterCompte(compte9);
+					} catch (BanqueException e1) { // TODO
+					} try {
+						client3.ajouterCompte(new Compte());
+					} catch (BanqueException e1) { // TODO
+					} try {
+						client3.ajouterCompte(new CompteRemunere());
+					} catch (BanqueException e1) { //
+					}
 
 
-
+					System.out.println(client3.toString()); client3.verserInterets();
+					System.out.println(client3.toString());
 
 
 
@@ -174,3 +245,5 @@ public class Run {
 	}
 
 }
+
+
