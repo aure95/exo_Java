@@ -2,4 +2,11 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="fr.dessin.Point2D"/>
 <fullyQualifiedTypeName name="fr.dessin.Point3D"/>
+<fullyQualifiedTypeName name="fr.banque.BanqueException"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="fr.banque.CompteRemunere"/>
+<fullyQualifiedTypeName name="fr.banque.CompteASeuil"/>
+<fullyQualifiedTypeName name="fr.banque.CompteASeuilRemunere"/>
+<fullyQualifiedTypeName name="fr.banque.ICompteASeuil"/>
+<fullyQualifiedTypeName name="fr.banque.ICompteRemunere"/>
 </qualifiedTypeNameHistroy>

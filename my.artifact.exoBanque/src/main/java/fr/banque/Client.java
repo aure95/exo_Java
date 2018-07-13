@@ -87,46 +87,52 @@ public class Client {
 
 		Compte[] res = new Compte[this.compte.size()];
 		//this.compte.toArray(res);
-		/:this.compte.
+		if (!compte.isEmpty()) {
+			this.compte.values().toArray(res);
+		}
 
 		return res;
 	}
 
 	public Compte getCompte(int numeroCompte) {
 
+
+		//solution pour List
+		/*
+		 * Compte res = null; boolean OK=false; Compte[] compteCopie = new
+		 * Compte[this.compte.size()]; this.compte.toArray(compteCopie);
+		 *
+		 *
+		 * for (Compte co : compteCopie) { System.out.println(co.toString());
+		 *
+		 * if (co.getNumero() != 0) { if (co.getNumero() == numeroCompte) { res = co; OK
+		 * = true;
+		 *
+		 * } }
+		 *
+		 * }
+		 *
+		 * if (!OK) { System.out.println( "le compte avec numero de compte " +
+		 * numeroCompte + " ne peut etre trouvé ou n'éxiste pas "); }
+		 *
+		 * return res; // return new Compte();
+		 */
+
 		Compte res = null;
-		boolean OK=false;
-		Compte[] compteCopie = new Compte[this.compte.size()];
-		this.compte.toArray(compteCopie);
 
-
-		for (Compte co : compteCopie) {
-			System.out.println(co.toString());
-
-			if (co.getNumero() != 0) {
-				if (co.getNumero() == numeroCompte) {
-					res = co;
-					OK = true;
-
-				}
-			}
-
-		}
-
-		if (!OK) {
-			System.out.println(
-					"le compte avec numero de compte " + numeroCompte + " ne peut etre trouvé ou n'éxiste pas ");
+		if (!compte.isEmpty()) {
+			compte.get(numeroCompte);
 		}
 
 		return res;
-		// return new Compte();
 	}
 
 
 	public void ajouterCompte(Compte Acompte) throws BanqueException {
 
 		if (this.compte.size() < 5) {
-			this.compte.add(Acompte);
+			// this.compte.add(Acompte);
+			this.compte.put(Acompte.getNumero(), Acompte);
 		}
 		else
 		{
@@ -144,13 +150,17 @@ public class Client {
 		 * BanqueException("Le compte ne peut etre ajouté pas de place"); }
 		 */
 
+
 	}
 
 	public void verserInterets() {
 
 		int cpt = 0;
+		Compte[] compte_copie = new Compte[this.compte.size()];
 
-		for (Compte co : this.compte)
+		this.compte.values().toArray(compte_copie);
+
+		for (Compte co : compte_copie)
 		{
 			if(co == null)
 			{
@@ -160,15 +170,18 @@ public class Client {
 			if (co.getClass().toString().equals("class fr.banque.CompteRemunere")) {
 				// System.out.println("class cLient ");
 				((CompteRemunere) co).verserInterets();
-				this.compte.set(cpt, co);
+				this.compte.replace(cpt, co);
 
 
 
 			}
 			if(co instanceof ICompteRemunere) {
 				// System.out.println("co instanceof ICompteRemunere debut");
+				// System.out.println("replace1 =" + this.compte.values().toString());
 				((ICompteRemunere) co).verserInterets();
-				this.compte.set(cpt, co);
+
+				this.compte.replace(cpt, co);
+				// System.out.println("replace2 =" + this.compte.values().toString());
 				// System.out.println("co instanceof ICompteRemunere fin");
 			}
 			cpt++;
@@ -178,7 +191,10 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", numero=" + numero + ", compte="
+		/*	return "Client [nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", numero=" + numero + ", compte="
 				+ Arrays.toString(this.compte.toArray()) + "]";
+		 */
+		return "Client [nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", numero=" + numero + ", compte="
+		+ Arrays.toString(this.compte.values().toArray()) + "]";
 	}
 }

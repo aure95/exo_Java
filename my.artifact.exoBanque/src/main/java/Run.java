@@ -103,9 +103,9 @@ public class Run {
 		}
 		System.out.println(c1.toString());
 
-		System.out.println(c1.getCompte(123).toString());
-		System.out.println(c1.getCompte(456).toString());
-		System.out.println(c1.getCompte(789));
+		// System.out.println(c1.getCompte(123).toString());
+		// System.out.println(c1.getCompte(456).toString());
+		// System.out.println(c1.getCompte(789));
 
 		System.out.println(Arrays.toString(c1.getCompte()));
 
@@ -215,27 +215,34 @@ public class Run {
 
 		Client client3 = new Client();
 		client3.setNom("titi");
-		client3.setPrenom("roland"); client3.setNumero(48);
+		client3.setPrenom("roland");
+		client3.setNumero(48);
 
-		System.out.println(client3.toString()); try { client3.ajouterCompte(new
-				Compte());
+		System.out.println(client3.toString());
+		try {
+			client3.ajouterCompte(compte9);
 		} catch (BanqueException e1) { //
-			e1.printStackTrace(); } System.out.println(client3.toString());
+			e1.printStackTrace();
+		}
+		System.out.println(client3.toString());
 
-			try {
-				client3.ajouterCompte(compte9);
-			} catch (BanqueException e1) {
-			} try {
-				client3.ajouterCompte(new Compte());
-			} catch (BanqueException e1) {
-			} try {
-				client3.ajouterCompte(new CompteRemunere());
-			} catch (BanqueException e1) {
-			}
+		try {
+			client3.ajouterCompte(new Compte(183, 45.6));
+		} catch (BanqueException e1) {
+		} try {
+			client3.ajouterCompte(new Compte());
+		} catch (BanqueException e1) {
+		} try {
+			client3.ajouterCompte(new CompteRemunere(753, 45.3, 0.42) {
+			});
+		} catch (BanqueException e1) {
+		}
 
 
-			System.out.println(client3.toString()); client3.verserInterets();
-			System.out.println(client3.toString());
+
+		System.out.println(client3.toString());
+		client3.verserInterets();
+		System.out.println(client3.toString());
 
 
 
