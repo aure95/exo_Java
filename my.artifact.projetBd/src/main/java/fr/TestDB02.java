@@ -5,27 +5,25 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.banque.Client;
 
 
-
-public class TestDB01 {
-
+public class TestDB02 {
 
 
-	public TestDB01() {
+	private final String dbDriver = "com.mysql.jdbc.Driver";
+	private final String dbUrl = "jdbc:mysql://localhost/banque";
+	private final String dbLogin = "root";
+	private final String dbPwd = "";
 
-	}
+	private Connection connection = null;
+	private Statement request = null;
+	private ResultSet resultat = null;
 
-	public static void main(String[] args) {
-
-		final String dbDriver = "com.mysql.jdbc.Driver";
-		final String dbUrl = "jdbc:mysql://localhost/banque";
-		final String dbLogin = "root";
-		final String dbPwd = "";
-
-		Connection connection = null;
-		Statement request = null;
-		ResultSet resultat = null;
+	public void init(){
 
 		try {
 			Class.forName(dbDriver);
@@ -33,17 +31,26 @@ public class TestDB01 {
 			e.printStackTrace();
 		}
 
-		try {
+	}
+
+	public void recupererAllClients() {
+		List<Client> clients = new ArrayList<>();
+
+		//////////////////////////////////////////////////
+		try
+		{
 			connection = DriverManager.getConnection(dbUrl, dbLogin, dbPwd);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		}catch(
+				SQLException e)
+		{
+			//
 			e.printStackTrace();
 		}
 
 		try {
-			request = connection.createStatement();
+			this.request = connection.createStatement();
 		} catch (SQLException e) {
-			//
+			// TODO Auto-generated catch block
 			// e.printStackTrace();
 		}
 
@@ -55,6 +62,9 @@ public class TestDB01 {
 		}
 
 		try {
+			for (int i = 0; i < resultat.getMetaData(); i++) {
+				System.out.println(resultat.getMetaData().getTableName(i));
+			}
 			while (resultat.next()) {
 				System.out.println(resultat.getString("nom"));
 				System.out.println(resultat.getString("prenom"));
@@ -63,7 +73,6 @@ public class TestDB01 {
 			//
 			// e.printStackTrace();
 		}
-
 
 		finally {
 			if (resultat != null) {
@@ -89,8 +98,12 @@ public class TestDB01 {
 			}
 		}
 
-
+		// return clients;
 
 	}
+
+
+
+
 
 }

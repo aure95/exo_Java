@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
+import fr.Client;
 import fr.banque.BanqueException;
-import fr.banque.Client;
 import fr.banque.Compte;
 import fr.banque.CompteASeuil;
 import fr.banque.CompteASeuilRemunere;
