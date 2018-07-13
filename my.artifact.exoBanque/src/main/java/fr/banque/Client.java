@@ -121,7 +121,7 @@ public class Client {
 		Compte res = null;
 
 		if (!compte.isEmpty()) {
-			compte.get(numeroCompte);
+			res = compte.get(numeroCompte);
 		}
 
 		return res;

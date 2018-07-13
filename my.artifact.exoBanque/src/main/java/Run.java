@@ -103,9 +103,9 @@ public class Run {
 		}
 		System.out.println(c1.toString());
 
-		// System.out.println(c1.getCompte(123).toString());
-		// System.out.println(c1.getCompte(456).toString());
-		// System.out.println(c1.getCompte(789));
+		System.out.println(c1.getCompte(123).toString());
+		System.out.println(c1.getCompte(456).toString());
+		System.out.println(c1.getCompte(789));
 
 		System.out.println(Arrays.toString(c1.getCompte()));
 
