@@ -9,4 +9,5 @@
 <fullyQualifiedTypeName name="fr.banque.CompteASeuilRemunere"/>
 <fullyQualifiedTypeName name="fr.banque.ICompteASeuil"/>
 <fullyQualifiedTypeName name="fr.banque.ICompteRemunere"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
