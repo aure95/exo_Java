@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
-import fr.Client;
 import fr.banque.BanqueException;
+import fr.banque.Client;
 import fr.banque.Compte;
 import fr.banque.CompteASeuil;
 import fr.banque.CompteASeuilRemunere;
@@ -111,53 +111,55 @@ public class Run {
 
 		CompteRemunere compte6 = new CompteRemunere();
 
-		System.out.println("\n" + "/////////////" + compte6.getClass() +
-				"/////////////" + "\n");
+		System.out.println("\n" + "/////////////" + compte6.getClass() + "/////////////" + "\n");
 
-
-		compte6.setSolde(50.0D); compte6.setTaux(0.25);
+		compte6.setSolde(50.0D);
+		compte6.setTaux(0.25);
 		System.out.println(compte6.toString());
-		System.out.println(compte6.calculerInterets()); compte6.verserInterets();
+		System.out.println(compte6.calculerInterets());
+		compte6.verserInterets();
 		System.out.println(compte6.toString());
 
 		CompteASeuil compte7 = new CompteASeuil();
 
-		System.out.println("\n" + "/////////////" + compte7.getClass() +
-				"/////////////" + "\n");
+		System.out.println("\n" + "/////////////" + compte7.getClass() + "/////////////" + "\n");
 
-		System.out.println(compte7.toString()); compte7.ajouter(20.0D);
-		System.out.println(compte7.toString()); compte7.setSeuil(15.0D);
+		System.out.println(compte7.toString());
+		compte7.ajouter(20.0D);
+		System.out.println(compte7.toString());
+		compte7.setSeuil(15.0D);
 		System.out.println(compte7.toString());
 
-
-		try { compte7.retirer(2.0D); }
-		catch (BanqueException e) {
+		try {
+			compte7.retirer(2.0D);
+		} catch (BanqueException e) {
 			e.printStackTrace();
 		}
-
-
 
 		System.out.println(compte7.toString());
 		try {
 			compte7.retirer(10.0D);
-		} catch
-		(BanqueException e1) {
+		} catch (BanqueException e1) {
 			//
 			e1.printStackTrace();
 		}
 		System.out.println(compte7.toString());
 		try {
 			compte7.retirer(2.0D);
+		} catch (BanqueException e1) { //
+			e1.printStackTrace();
 		}
-		catch (BanqueException e1) { //
-			e1.printStackTrace(); }
 
 		System.out.println(compte7.toString());
 
-		Client client2 = new Client(); System.out.println(client2.toString());
-		client2.setNom("toto"); client2.setPrenom("dupont"); client2.setNumero(452);
+		Client client2 = new Client();
+		System.out.println(client2.toString());
+		client2.setNom("toto");
+		client2.setPrenom("dupont");
+		client2.setNumero(452);
 
-		Compte compte8[] = null; compte8 = new Compte[5];
+		Compte compte8[] = null;
+		compte8 = new Compte[5];
 
 		compte8[0] = new Compte(123, 48.0D);
 		compte8[1] = new Compte(456, 78.4D);
@@ -180,18 +182,14 @@ public class Run {
 
 		System.out.println(client2.toString());
 
-
 		System.out.println("\n////////////////essai class CompteASeuilRemunere////////////\n");
 
 		CompteASeuilRemunere compte9 = new CompteASeuilRemunere();
 
-
-		System.out.println("compte9 instanceof ICompteASeuil " + String.valueOf(compte9
-				instanceof ICompteASeuil));
-		System.out.println("compte9 instanceof ICompteRemunere " + String.valueOf(
-				compte9 instanceof ICompteRemunere));
-		System.out.println("compte9 instanceof CompteASeuilRemunere " + String.valueOf(compte9
-				instanceof CompteASeuilRemunere));
+		System.out.println("compte9 instanceof ICompteASeuil " + String.valueOf(compte9 instanceof ICompteASeuil));
+		System.out.println("compte9 instanceof ICompteRemunere " + String.valueOf(compte9 instanceof ICompteRemunere));
+		System.out.println(
+				"compte9 instanceof CompteASeuilRemunere " + String.valueOf(compte9 instanceof CompteASeuilRemunere));
 
 		System.out.println(compte9.toString());
 		compte9.setSolde(90.0D);
@@ -211,8 +209,6 @@ public class Run {
 		}
 		System.out.println(compte9.toString());
 
-
-
 		Client client3 = new Client();
 		client3.setNom("titi");
 		client3.setPrenom("roland");
@@ -229,27 +225,21 @@ public class Run {
 		try {
 			client3.ajouterCompte(new Compte(183, 45.6));
 		} catch (BanqueException e1) {
-		} try {
+		}
+		try {
 			client3.ajouterCompte(new Compte());
 		} catch (BanqueException e1) {
-		} try {
+		}
+		try {
 			client3.ajouterCompte(new CompteRemunere(753, 45.3, 0.42) {
 			});
 		} catch (BanqueException e1) {
 		}
 
-
-
 		System.out.println(client3.toString());
 		client3.verserInterets();
 		System.out.println(client3.toString());
 
-
-
-
-
 	}
 
 }
-
-

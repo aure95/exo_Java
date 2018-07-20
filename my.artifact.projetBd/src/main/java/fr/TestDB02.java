@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import fr.banque.Client;
@@ -23,29 +24,46 @@ public class TestDB02 {
 	private Statement request = null;
 	private ResultSet resultat = null;
 
+	private class CliModel {
+		String nom = null;
+		String prenom = null;
+		String dateDeNaissance = null;
+	}
+
+	public TestDB02() {
+
+		this.init();
+	}
+
 	public void init(){
 
 		try {
 			Class.forName(dbDriver);
 		} catch (Exception e) {
 			e.printStackTrace();
+
+		}
+		try {
+			connection = DriverManager.getConnection(dbUrl, dbLogin, dbPwd);
+		} catch (SQLException e1) {
+			//
+			e1.printStackTrace();
 		}
 
 	}
 
-	public void recupererAllClients() {
+	public List<Client> recupererAllClients() {
 		List<Client> clients = new ArrayList<>();
 
+
+
+
+
+
+
+
 		//////////////////////////////////////////////////
-		try
-		{
-			connection = DriverManager.getConnection(dbUrl, dbLogin, dbPwd);
-		}catch(
-				SQLException e)
-		{
-			//
-			e.printStackTrace();
-		}
+
 
 		try {
 			this.request = connection.createStatement();
@@ -61,14 +79,58 @@ public class TestDB02 {
 			// e.printStackTrace();
 		}
 
+
 		try {
-			for (int i = 0; i < resultat.getMetaData(); i++) {
-				System.out.println(resultat.getMetaData().getTableName(i));
+
+
+			String[] fieldNames = new String[resultat.getMetaData().getColumnCount()];
+			for (int i = 1; i < resultat.getMetaData().getColumnCount(); i++) {
+
+				fieldNames[i - 1] = resultat.getMetaData().getColumnLabel(i);
+				System.out.println(resultat.getMetaData().getColumnLabel(i));
+
 			}
+
+			System.out.println("///////////" + this.getClass().getSimpleName() + "///////////");
+
+
+
 			while (resultat.next()) {
+
+				Client client = new Client();
+
+
+				// Client client = new Client();
+				CliModel cliModel = new CliModel();
+
 				System.out.println(resultat.getString("nom"));
+				cliModel.nom = resultat.getString("nom");
+
 				System.out.println(resultat.getString("prenom"));
+				cliModel.prenom = resultat.getString("prenom");
+
+
+				System.out.println(resultat.getString("dateDeNaissance"));
+				cliModel.dateDeNaissance = resultat.getString("dateDeNaissance");
+
+				// if (cliModel.nom != null) {
+				client.setNom(cliModel.nom);
+				// }
+				// if (cliModel.prenom != null) {
+				client.setPrenom(cliModel.prenom);
+				// }
+				// if (cliModel.dateDeNaissance != null) {
+
+				// }
+				client.setAge(this.calculerAge(cliModel.dateDeNaissance));
+
+
+				// System.out.println(client.toString());
+				clients.add(client);
+
 			}
+
+
 		} catch (SQLException e) {
 			//
 			// e.printStackTrace();
@@ -98,9 +160,39 @@ public class TestDB02 {
 			}
 		}
 
-		// return clients;
+		return clients;
 
 	}
+
+	private int calculerAge(String dateDeNaissance) {
+
+		int age = 0;
+		Date date = new Date();
+		int currentYear = date.getYear() + 1900;
+		System.out.println("year " + currentYear);
+		// age = Integer.parseInt(dateDeNaissance.split("")[0]);
+		// System.out.println("date de naissance " + dateDeNaissance);
+		//System.out.println(Arrays.toString(dateDeNaissance.split("-")));
+
+		if(dateDeNaissance!=null)
+		{
+			String[] data = dateDeNaissance.split("-");
+			int yearParsed = Integer.parseInt(data[0]);
+			System.out.println(yearParsed);
+			age = currentYear - yearParsed;
+			System.out.println("age calcul= " + age);
+
+			return age;
+
+
+		}
+
+
+		// age = Integer.parseInt(dateDeNaissance.split("-")[0]);
+
+		return 0;
+	}
+
 
 
 

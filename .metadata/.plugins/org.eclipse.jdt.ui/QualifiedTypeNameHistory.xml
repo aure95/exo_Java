@@ -2,12 +2,23 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="fr.dessin.Point2D"/>
 <fullyQualifiedTypeName name="fr.dessin.Point3D"/>
-<fullyQualifiedTypeName name="fr.banque.BanqueException"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="fr.banque.CompteRemunere"/>
 <fullyQualifiedTypeName name="fr.banque.CompteASeuil"/>
 <fullyQualifiedTypeName name="fr.banque.CompteASeuilRemunere"/>
 <fullyQualifiedTypeName name="fr.banque.ICompteASeuil"/>
 <fullyQualifiedTypeName name="fr.banque.ICompteRemunere"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.Statement"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.TestDB02"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="fr.banque.Compte"/>
+<fullyQualifiedTypeName name="fr.banque.BanqueException"/>
+<fullyQualifiedTypeName name="fr.banque.Client"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

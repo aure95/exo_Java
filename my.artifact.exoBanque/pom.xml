@@ -18,6 +18,8 @@
     <!-- https://maven.apache.org/plugins/index.html -->
     <maven-compiler-plugin-version>3.7.0</maven-compiler-plugin-version>
     <maven-jar-plugin-version>3.1.0</maven-jar-plugin-version>
+    <!-- Sonar -->
+    <sonar.language>java</sonar.language>
   </properties>
   
   <build>
