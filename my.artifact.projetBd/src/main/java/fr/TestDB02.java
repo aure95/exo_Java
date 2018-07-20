@@ -52,6 +52,10 @@ public class TestDB02 {
 
 	}
 
+	public Connection getConnection() {
+		return this.connection;
+	}
+
 	public List<Client> recupererAllClients() {
 		List<Client> clients = new ArrayList<>();
 
@@ -129,40 +133,42 @@ public class TestDB02 {
 				clients.add(client);
 
 			}
-
-
 		} catch (SQLException e) {
 			//
 			// e.printStackTrace();
 		}
 
-		finally {
-			if (resultat != null) {
-				try {
-					resultat.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (request != null) {
-				try {
-					request.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
 		return clients;
 
 	}
+
+	public void close() {
+
+		if (resultat != null) {
+			try {
+				resultat.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (request != null) {
+			try {
+				request.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (connection != null) {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+
+
 
 	private int calculerAge(String dateDeNaissance) {
 

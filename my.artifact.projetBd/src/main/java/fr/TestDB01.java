@@ -25,6 +25,8 @@ public class TestDB01 {
 		clients.toArray(client);
 		System.out.println(Arrays.toString(client));
 
+		db.close();
+
 		/*
 		 * final String dbDriver = "com.mysql.jdbc.Driver"; final String dbUrl =
 		 * "jdbc:mysql://localhost/banque"; final String dbLogin = "root"; final String
