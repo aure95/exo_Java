@@ -91,7 +91,7 @@ public class TestDB02 {
 			for (int i = 1; i < resultat.getMetaData().getColumnCount(); i++) {
 
 				fieldNames[i - 1] = resultat.getMetaData().getColumnLabel(i);
-				System.out.println(resultat.getMetaData().getColumnLabel(i));
+				// System.out.println(resultat.getMetaData().getColumnLabel(i));
 
 			}
 
@@ -107,14 +107,14 @@ public class TestDB02 {
 				// Client client = new Client();
 				CliModel cliModel = new CliModel();
 
-				System.out.println(resultat.getString("nom"));
+				// System.out.println(resultat.getString("nom"));
 				cliModel.nom = resultat.getString("nom");
 
-				System.out.println(resultat.getString("prenom"));
+				// System.out.println(resultat.getString("prenom"));
 				cliModel.prenom = resultat.getString("prenom");
 
 
-				System.out.println(resultat.getString("dateDeNaissance"));
+				// System.out.println(resultat.getString("dateDeNaissance"));
 				cliModel.dateDeNaissance = resultat.getString("dateDeNaissance");
 
 				// if (cliModel.nom != null) {
@@ -175,7 +175,7 @@ public class TestDB02 {
 		int age = 0;
 		Date date = new Date();
 		int currentYear = date.getYear() + 1900;
-		System.out.println("year " + currentYear);
+		// System.out.println("year " + currentYear);
 		// age = Integer.parseInt(dateDeNaissance.split("")[0]);
 		// System.out.println("date de naissance " + dateDeNaissance);
 		//System.out.println(Arrays.toString(dateDeNaissance.split("-")));
@@ -184,9 +184,9 @@ public class TestDB02 {
 		{
 			String[] data = dateDeNaissance.split("-");
 			int yearParsed = Integer.parseInt(data[0]);
-			System.out.println(yearParsed);
+			// System.out.println(yearParsed);
 			age = currentYear - yearParsed;
-			System.out.println("age calcul= " + age);
+			// System.out.println("age calcul= " + age);
 
 			return age;
 

@@ -10593,3 +10593,6 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/my.artifact.p
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1498)
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-07-23 10:58:03.557
 !MESSAGE Cannot determine URI for '/my.artifact.projetBd/src/main/java/fr/TestDB01.java'.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-23 11:03:06.537
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'

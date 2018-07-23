@@ -1,3 +1,5 @@
+import java.util.List;
+
 import fr.TestDB02;
 import fr.banque.Client;
 
@@ -10,7 +12,7 @@ public class Run {
 
 		System.out.println("debut ok");
 
-		testDB02.recupererAllClients();
+		List<Client> clients = testDB02.recupererAllClients();
 
 	}
 
