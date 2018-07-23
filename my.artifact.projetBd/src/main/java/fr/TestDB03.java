@@ -15,6 +15,7 @@ public class TestDB03 extends TestDB02 {
 	private Statement request = null;
 	private ResultSet resultat = null;
 
+
 	public TestDB03() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -24,6 +25,8 @@ public class TestDB03 extends TestDB02 {
 	public List<Compte> getCompteClient(Client client) {
 
 		List<Compte> Comptes = new ArrayList<>();
+
+		Compte compte = null;
 
 		Connection connection = this.getConnection();
 		try {
@@ -37,12 +40,40 @@ public class TestDB03 extends TestDB02 {
 			resultat = request
 					.executeQuery("select * from compte where utilisateurId=(select id from utilisateur where nom='"
 							+ client.getNom() + "' and prenom='" + client.getPrenom() + "' )");
+
+			int cpt = 1;
+
+			while (resultat.next()) {
+
+				String[] data = new String[4];
+
+
+				data[0] = resultat.getString("libelle");
+				data[1] = resultat.getString("solde");
+				data[2] = resultat.getString("decouvert");
+				data[3] = resultat.getString("taux");
+
+				System.out.println("///////" + String.valueOf(cpt) + "////////");
+
+				for (String d : data) {
+					System.out.println(d);
+				}
+
+				cpt++;
+
+
+
+
+
+			}
+
 		} catch (SQLException e) {
 			//
 			// e.printStackTrace();
 		}
 
-		System.out.println(resultat);
+
+		// System.out.println(resultat);
 
 
 
