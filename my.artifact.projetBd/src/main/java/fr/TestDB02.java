@@ -24,6 +24,27 @@ public class TestDB02 {
 	private Statement request = null;
 	private ResultSet resultat = null;
 
+
+	public Statement getRequest() {
+		return request;
+	}
+
+	public void setRequest(Statement request) {
+		this.request = request;
+	}
+
+	public ResultSet getResultat() {
+		return resultat;
+	}
+
+	public void setResultat(ResultSet resultat) {
+		this.resultat = resultat;
+	}
+
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+
 	private class CliModel {
 		String nom = null;
 		String prenom = null;

@@ -29,6 +29,7 @@ public class TestDB03 extends TestDB02 {
 
 		List<Compte> comptes = new ArrayList<>();
 
+
 		Compte compte = null;
 
 
@@ -102,8 +103,10 @@ public class TestDB03 extends TestDB02 {
 
 
 
+		this.close();
 
 		return comptes;
+
 
 
 	}
