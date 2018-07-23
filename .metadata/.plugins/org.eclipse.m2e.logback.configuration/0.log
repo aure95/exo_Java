@@ -5689,3 +5689,25 @@ org.eclipse.core.runtime.CoreException: Variable references non-existent resourc
 2018-07-23 12:35:49,512 [Worker-36: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\test\resources
 2018-07-23 12:35:57,421 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-07-23 12:35:57,426 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\main\resources
+2018-07-23 12:35:57,430 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:35:57,434 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\test\resources
+2018-07-23 12:38:06,796 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:38:06,796 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\main\resources
+2018-07-23 12:38:06,801 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:38:06,855 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\test\resources
+2018-07-23 12:39:02,857 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:39:02,865 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\main\resources
+2018-07-23 12:39:02,872 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:39:02,877 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\test\resources
+2018-07-23 12:39:20,123 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:39:20,128 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\main\resources
+2018-07-23 12:39:20,132 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:39:20,136 [Worker-31: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\test\resources
+2018-07-23 12:42:49,953 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:42:49,957 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\main\resources
+2018-07-23 12:42:49,962 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:42:49,966 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\test\resources
+2018-07-23 12:47:01,962 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:47:01,967 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\main\resources
+2018-07-23 12:47:01,972 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-23 12:47:01,976 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\aure\eclipse-workspace\my.artifact.projetBd\src\test\resources

@@ -24,7 +24,7 @@ public class TestDB03 extends TestDB02 {
 
 	public List<Compte> getCompteClient(Client client) {
 
-		List<Compte> Comptes = new ArrayList<>();
+		List<Compte> comptes = new ArrayList<>();
 
 		Compte compte = null;
 
@@ -48,6 +48,7 @@ public class TestDB03 extends TestDB02 {
 				String[] data = new String[4];
 
 
+
 				data[0] = resultat.getString("libelle");
 				data[1] = resultat.getString("solde");
 				data[2] = resultat.getString("decouvert");
@@ -63,6 +64,7 @@ public class TestDB03 extends TestDB02 {
 
 
 
+				System.out.println(CompteConverter.getTypeCompte(data[0], data[2]));
 
 
 			}
@@ -73,7 +75,7 @@ public class TestDB03 extends TestDB02 {
 		}
 
 
-		// System.out.println(resultat);
+
 
 
 
