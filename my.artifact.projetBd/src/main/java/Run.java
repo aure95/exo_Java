@@ -35,6 +35,32 @@ public class Run {
 
 		comptes = testDB03.getCompteClient(client);
 
+		for (Compte compte : comptes) {
+			System.out.println(compte.toString());
+		}
+
+		client.setNom("Fanael");
+		client.setPrenom("Julie");
+
+		System.out.println(client.toString());
+
+		comptes = testDB03.getCompteClient(client);
+
+		for (Compte compte : comptes) {
+			System.out.println(compte.toString());
+		}
+
+		client.setNom("Robert");
+		client.setPrenom("Julie");
+
+		System.out.println(client.toString());
+
+		comptes = testDB03.getCompteClient(client);
+
+		for (Compte compte : comptes) {
+			System.out.println(compte.toString());
+		}
+
 
 		// System.out.println(CompteConverter.getTypeCompte("Compte Remunéré", null));
 

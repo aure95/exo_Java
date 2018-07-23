@@ -9,11 +9,14 @@ import java.util.List;
 
 import fr.banque.Client;
 import fr.banque.Compte;
+import fr.banque.CompteASeuil;
+import fr.banque.CompteRemunere;
 
 public class TestDB03 extends TestDB02 {
 
 	private Statement request = null;
 	private ResultSet resultat = null;
+
 
 
 	public TestDB03() {
@@ -27,6 +30,8 @@ public class TestDB03 extends TestDB02 {
 		List<Compte> comptes = new ArrayList<>();
 
 		Compte compte = null;
+
+
 
 		Connection connection = this.getConnection();
 		try {
@@ -54,22 +59,41 @@ public class TestDB03 extends TestDB02 {
 				data[2] = resultat.getString("decouvert");
 				data[3] = resultat.getString("taux");
 
-				System.out.println("///////" + String.valueOf(cpt) + "////////");
-
-				for (String d : data) {
-					System.out.println(d);
-				}
+				/*
+				 * System.out.println("///////" + String.valueOf(cpt) + "////////");
+				 *
+				 * for (String d : data) { System.out.println(d); }
+				 */
 
 				cpt++;
 
 
 
-				System.out.println(CompteConverter.getTypeCompte(data[0], data[2]));
+				compte = CompteConverter.getTypeCompte(data[0], data[2]);
 
+				// System.out.println(compte.getClass().toString());
+
+				if(compte instanceof Compte) {
+					compte.setSolde(Double.parseDouble(data[1]));
+				}
+
+				if(compte instanceof CompteASeuil) {
+					((CompteASeuil) compte).setSeuil(Double.parseDouble(data[2]));
+				}
+
+				if(compte instanceof CompteRemunere) {
+					((CompteRemunere) compte).setTaux(Double.parseDouble(data[3]));
+				}
+
+
+
+				comptes.add(compte);
 
 			}
 
 		} catch (SQLException e) {
+
+
 			//
 			// e.printStackTrace();
 		}
@@ -79,7 +103,7 @@ public class TestDB03 extends TestDB02 {
 
 
 
-		return Comptes;
+		return comptes;
 
 
 	}

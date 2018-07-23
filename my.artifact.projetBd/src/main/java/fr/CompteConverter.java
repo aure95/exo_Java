@@ -1,20 +1,25 @@
 package fr;
 
+import fr.banque.Compte;
+import fr.banque.CompteASeuil;
+import fr.banque.CompteASeuilRemunere;
+import fr.banque.CompteRemunere;
+
 public class CompteConverter {
 
-	private static String[] typeCompte = null;
+	private static Compte[] typeCompte = null;
 
-	public static String getTypeCompte(String libelle, String decouvert) {
+	public static Compte getTypeCompte(String libelle, String decouvert) {
 
-		CompteConverter.typeCompte = new String[4];
-		CompteConverter.typeCompte[0] = "Compte";
-		CompteConverter.typeCompte[1] = "CompteASeuil";
-		CompteConverter.typeCompte[2] = "CompteRemunere";
-		CompteConverter.typeCompte[3] = "CompteASeuilRemunere";
+		CompteConverter.typeCompte = new Compte[4];
+		CompteConverter.typeCompte[0] = new Compte();
+		CompteConverter.typeCompte[1] = new CompteASeuil();
+		CompteConverter.typeCompte[2] = new CompteRemunere();
+		CompteConverter.typeCompte[3] = new CompteASeuilRemunere();
 
 
 
-		String res = null;
+		Compte res = null;
 
 		switch (libelle) {
 		case "Compte Courant":
