@@ -47,6 +47,7 @@ public class TestDB03 extends TestDB02 {
 					.executeQuery("select * from compte where utilisateurId=(select id from utilisateur where nom='"
 							+ client.getNom() + "' and prenom='" + client.getPrenom() + "' )");
 
+			String requete = "select *from operation where compteId=(select c.id from utilisateur u,compte c where u.nom=\"Fargis\" and u.prenom=\"Denis\" and u.id=c.utilisateurId)";
 			int cpt = 1;
 
 			while (resultat.next()) {

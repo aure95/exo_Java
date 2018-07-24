@@ -16,7 +16,7 @@ public class TestDB04 extends TestDB03 {
 
 	public List<Operation> getAllOperationClient(Client client) {
 
-		List<Operation> operations = new ArrayList<>();
+		ArrayList<Operation> operations = new ArrayList<>();
 		try {
 			this.setRequest(this.getConnection().createStatement());
 
