@@ -27,6 +27,8 @@ public class TestDB03 extends TestDB02 {
 
 	public List<Compte> getCompteClient(Client client) {
 
+		this.init();
+
 		List<Compte> comptes = new ArrayList<>();
 
 
@@ -47,19 +49,21 @@ public class TestDB03 extends TestDB02 {
 					.executeQuery("select * from compte where utilisateurId=(select id from utilisateur where nom='"
 							+ client.getNom() + "' and prenom='" + client.getPrenom() + "' )");
 
-			String requete = "select *from operation where compteId=(select c.id from utilisateur u,compte c where u.nom=\"Fargis\" and u.prenom=\"Denis\" and u.id=c.utilisateurId)";
+			// String requete = "select *from operation where compteId=(select c.id from
+			// utilisateur u,compte c where u.nom=\"Fargis\" and u.prenom=\"Denis\" and
+			// u.id=c.utilisateurId)";
 			int cpt = 1;
 
 			while (resultat.next()) {
 
-				String[] data = new String[4];
 
 
 
-				data[0] = resultat.getString("libelle");
-				data[1] = resultat.getString("solde");
-				data[2] = resultat.getString("decouvert");
-				data[3] = resultat.getString("taux");
+
+				double solde = resultat.getDouble("solde");
+				double decouvert = resultat.getDouble("decouvert");
+				double taux = resultat.getDouble("taux");
+
 
 				/*
 				 * System.out.println("///////" + String.valueOf(cpt) + "////////");
@@ -67,24 +71,24 @@ public class TestDB03 extends TestDB02 {
 				 * for (String d : data) { System.out.println(d); }
 				 */
 
-				cpt++;
+				// cpt++;
 
 
 
-				compte = CompteConverter.getTypeCompte(data[0], data[2]);
+				compte = CompteConverter.getTypeCompte(decouvert, taux);
 
 				// System.out.println(compte.getClass().toString());
 
 				if(compte instanceof Compte) {
-					compte.setSolde(Double.parseDouble(data[1]));
+					compte.setSolde(solde);
 				}
 
 				if(compte instanceof CompteASeuil) {
-					((CompteASeuil) compte).setSeuil(Double.parseDouble(data[2]));
+					((CompteASeuil) compte).setSeuil(decouvert);
 				}
 
 				if(compte instanceof CompteRemunere) {
-					((CompteRemunere) compte).setTaux(Double.parseDouble(data[3]));
+					((CompteRemunere) compte).setTaux(taux);
 				}
 
 

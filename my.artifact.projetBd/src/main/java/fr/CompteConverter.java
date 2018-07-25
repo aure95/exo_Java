@@ -9,7 +9,7 @@ public class CompteConverter {
 
 	private static Compte[] typeCompte = null;
 
-	public static Compte getTypeCompte(String libelle, String decouvert) {
+	public static Compte getTypeCompte(double decouvert, double taux) {
 
 		CompteConverter.typeCompte = new Compte[4];
 		CompteConverter.typeCompte[0] = new Compte();
@@ -18,37 +18,31 @@ public class CompteConverter {
 		CompteConverter.typeCompte[3] = new CompteASeuilRemunere();
 
 
-
 		Compte res = null;
 
-		switch (libelle) {
-		case "Compte Courant":
-			if (decouvert == null) {
+
+		if (decouvert == 0.0) {
+			if (taux == 0.0) {
+				// Compte
 				res = CompteConverter.typeCompte[0];
-
 			} else {
-				res = CompteConverter.typeCompte[1];
-			}
-
-			break;
-
-		case "Livret A":
-
-			res = CompteConverter.typeCompte[2];
-			break;
-
-		case "Compte Remunéré":
-
-			if (decouvert == null) {
+				// CompteRemunere
 				res = CompteConverter.typeCompte[2];
-
-			} else {
-				res = CompteConverter.typeCompte[3];
 			}
-			break;
 
 		}
+		else {
+			if (taux == 0.0) {
+				// CompteASeuil
+				res = CompteConverter.typeCompte[1];
+			}
+			else
+			{
+				// CompteASeuilRemeunere
+				res = CompteConverter.typeCompte[3];
 
+			}
+		}
 
 		return res;
 
