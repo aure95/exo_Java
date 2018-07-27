@@ -97,6 +97,7 @@ public class FirstServlet extends HttpServlet {
 
 
 
+
 		if(Vch1!=null)
 		{
 			// traitement
